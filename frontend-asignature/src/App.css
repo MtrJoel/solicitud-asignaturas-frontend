@@ -183,13 +183,8 @@ nav {
   margin-bottom: 1.5rem;
 }
 
-.buscador {
-  width: 320px;
-  padding: 0.65rem 1rem;
-  border-radius: 12px;
-  border: 1px solid #e2e8f0;
-  background: white;
-  font-size: 0.9rem;
+.topbar-spacer {
+  flex: 1;
 }
 
 .perfil-topbar {
@@ -251,6 +246,15 @@ nav {
   text-align: right;
 }
 
+.banner-director {
+  background: linear-gradient(135deg, #1e3a5f, #3f5fe0);
+}
+
+.banner-director h1,
+.banner-director p {
+  color: white;
+}
+
 /* ---------- Cards ---------- */
 .card {
   background: white;
@@ -288,6 +292,11 @@ select:focus {
   outline: none;
   border-color: #6d5dfc;
   box-shadow: 0 0 0 3px rgba(109, 93, 252, 0.12);
+}
+
+.buscador-interno {
+  width: 100%;
+  margin-bottom: 1rem;
 }
 
 .fila-dia {
@@ -445,12 +454,110 @@ button:hover {
   background: #16a34a;
 }
 
+.btn-baja {
+  align-self: flex-start;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.8rem;
+  background: #f97316;
+}
+
+.btn-baja:hover {
+  background: #ea580c;
+}
+
+.contador {
+  font-size: 0.78rem;
+  color: #3f5fe0;
+  font-weight: 600;
+}
+
 .vacio {
   color: #94a3b8;
   font-style: italic;
   font-size: 0.9rem;
 }
 
+/* ---------- Vista del director ---------- */
+.lista-director {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.item-director {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 1.1rem 1.3rem;
+}
+
+.item-director-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  margin-bottom: 0.8rem;
+}
+
+.item-director-info strong {
+  color: #1e293b;
+  font-size: 1rem;
+}
+
+.item-director-info span {
+  color: #64748b;
+  font-size: 0.85rem;
+}
+
+.item-director-info .creador {
+  color: #94a3b8;
+  font-size: 0.78rem;
+  font-style: italic;
+}
+
+.item-director-acciones {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.contador-grande {
+  font-size: 0.95rem;
+  background: #eef1ff;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+}
+
+.btn-ver-adherentes {
+  padding: 0.5rem 0.9rem;
+  font-size: 0.82rem;
+  background: #1e3a5f;
+}
+
+.btn-ver-adherentes:hover {
+  background: #16304d;
+}
+
+.lista-adherentes {
+  margin: 1rem 0 0;
+  padding: 0.8rem 1rem;
+  background: white;
+  border-radius: 10px;
+  border: 1px dashed #cbd5e1;
+  list-style: none;
+}
+
+.lista-adherentes li {
+  padding: 0.35rem 0;
+  font-size: 0.88rem;
+  color: #334155;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.lista-adherentes li:last-child {
+  border-bottom: none;
+}
+
+/* ---------- Perfil ---------- */
 .perfil-card {
   text-align: center;
   max-width: 320px;
@@ -477,6 +584,7 @@ button:hover {
   background: #fee2e2;
 }
 
+/* ---------- Mensajes ---------- */
 .mensaje {
   text-align: center;
   background: #fff7e6;
@@ -494,22 +602,7 @@ button:hover {
   color: #b91c1c;
 }
 
-.btn-baja {
-  align-self: flex-start;
-  padding: 0.4rem 0.9rem;
-  font-size: 0.8rem;
-  background: #f97316;
-}
-
-.btn-baja:hover {
-  background: #ea580c;
-}
-
-.contador {
-  font-size: 0.78rem;
-  color: #3f5fe0;
-  font-weight: 600;
-}
+/* ---------- Menú hamburguesa (móvil) ---------- */
 .btn-hamburguesa {
   display: none;
   background: none;
@@ -538,7 +631,6 @@ button:hover {
 }
 
 /* ---------- Responsive ---------- */
-
 @media (max-width: 900px) {
   .app-layout {
     position: relative;
@@ -606,20 +698,6 @@ button:hover {
     padding: 1.2rem 1rem;
   }
 
-  .topbar {
-    flex-wrap: wrap;
-    gap: 0.8rem;
-  }
-
-  .buscador {
-    order: 3;
-    width: 100%;
-  }
-
-  .perfil-topbar {
-    margin-left: auto;
-  }
-
   .banner {
     flex-direction: column;
     align-items: flex-start;
@@ -647,6 +725,12 @@ button:hover {
   }
 
   .acciones-propia {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.6rem;
+  }
+
+  .item-director-acciones {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.6rem;
